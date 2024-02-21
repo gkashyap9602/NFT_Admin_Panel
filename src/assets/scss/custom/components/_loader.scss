@@ -1,0 +1,24 @@
+.spinner_block {
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 250px;
+    right: 0;
+  
+    @media (max-width: 767px) {
+      left: 0px;
+    }
+  }
+  
+  .spinner-block {
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0px;
+    right: 0;
+  
+  }

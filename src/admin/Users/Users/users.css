@@ -1,0 +1,162 @@
+body a{
+    color: #f9a03d;
+}
+b, strong{
+    color: #495057;
+}
+th,td{
+    vertical-align: middle;
+}
+.page-content {
+    padding: calc(70px + 10px) calc(24px * 0.75) 60px calc(24px * 0.75) !important;
+}
+.logout_button {
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid #3e3b3b;
+    width: 100%;
+    text-align: center;
+    padding: 12px 20px;
+    padding: 0.625rem 1.5rem;
+    color: #545a6d;
+    font-size: 13px;
+    transition: all .4s;
+    background: #2a3042
+}
+.logout_button i {
+    min-width: 2rem;
+}
+.sidebar-enable .logout_button span{
+    display: none;
+}
+.logout_button span{
+    display: inline-block;
+}
+
+/* body[data-sidebar="dark"] #sidebar-menu ul li.setting-active a, body[data-sidebar="dark"] #sidebar-menu ul li.setting-active a i {
+    background: #000000 !important;
+    color: #a6b0cf !important;
+}
+body[data-sidebar="dark"] #sidebar-menu ul li.mm-active a,body[data-sidebar="dark"] #sidebar-menu ul li:hover a, body[data-sidebar="dark"] #sidebar-menu ul li.mm-active a i, .logout_button:hover {
+    color: #fff;
+    background: #ed1c24;
+} */
+
+ol.breadcrumb.m-0{
+    display: none;
+} 
+
+.inner-content{
+    bottom: 0;
+    left: 0;
+}
+.nft-category-image{
+    height: 170px;
+    overflow: hidden;
+}
+.nft-category-image img{
+    height: 100%;
+    object-fit: cover;
+}
+.background-user-image{
+    /* background-image: url('../images/background-user.png'); */
+    background-repeat: no-repeat;
+    background-size: 400px;
+    background-position: -6%;
+}
+
+body[data-sidebar="dark"] .mm-active > a i {
+    vertical-align: middle;
+    font-size: 22px;
+}
+body[data-sidebar="dark"] .mm-active > a {
+    color: #ffffff !important;
+    font-size: 16px;
+}
+.font-theme-color{
+    color: #f9a03d !important;
+}switch
+
+
+/* Slider */
+.slick-initialized{
+    padding: 0px !important;
+}
+.slick-prev:before, .slick-next:before{
+    color: black !important;
+}
+.category-background{
+    background-image: url('https://image.khaleejtimes.com/?uuid=1c6c087b-a5d5-5e37-9dcb-9293b0df11e4&function=cropresize&type=preview&source=false&q=75&crop_w=0.98472&crop_h=0.99999&x=0.00764&y=0&width=1200&height=475');    
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.account-pages{
+    position: relative;
+    z-index: 1;
+}
+
+.account-pages:after {
+    /* background-image: url("../../assets/nftBackground.png"); */
+    background-image: url(https://www.niceforyou.com/sites/default/files/styles/1920x900_crop/public/2020-07/shutterstock_1410695690.jpg?h=ce356d95&itok=H9x_jzBu);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    content: "";
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    top: -50px;
+    left: 0;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+input[switch="success"]:checked + label {
+    /* background-color:#37b9d7 !important; */
+    background-color:#0d6efd !important;
+
+}
+
+.square-switch input[switch] + label {
+    width: 80px;
+}
+/* tbody td:nth-child(5) {
+    width: 146px !important;
+} */
+
+input[switch]:checked + label:after {
+    right: 0px !important;
+    /* background-color: #eff2f7; */
+    margin-left: 24px;
+}
+.hstack .btn i {
+    font-size: 16px !important;
+}
+img.delImg {
+    width: 16px;
+    height: 16px;
+    margin-top: -4px;
+}
+/* i.fas.fa-eye {
+    width: 100%;
+    font-size: 16px;
+} */
+
+i.eyeIcon {
+    width: 100%;
+    font-size: 16px;
+}
+i.bx.bxs-pencil{
+    width: 15px;
+    font-size: 16px;
+}
+.square-switch.mytoggle {
+    margin-top: 11px;
+}
+
+ul.list-unstyled.hstack.gap-1.mb-0 {
+    gap: 1.25rem !important;
+
+}

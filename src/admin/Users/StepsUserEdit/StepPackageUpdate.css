@@ -1,0 +1,55 @@
+.packageRibbon_badge{
+    position: absolute;
+      /* z-index: 2000; */
+      line-height: 2em;
+      display: block;
+      width: 10em;
+      color: #fff;
+      height: 2.5em;
+      text-align: center;
+      text-decoration: none;
+      transform: translate(-32px, 18px) rotate(-45deg);
+      top: 0;
+      left: 0;
+      filter: drop-shadow(0 4px 7px rgba(0,0,0,0.4));
+  }
+  .packageRibbon_badge::after{
+    content: "";
+      position: absolute;
+      z-index: -1;
+      /* background-color: #37b8d6; */
+      background-color: #0d6efd;
+      border-bottom: 0.5em solid #00677e;
+      transition: background-color 0.2s ease-in-out;
+      inset: 0;
+      clip-path: polygon(2em 0, 8em 0, 10em 2em, 10em 2.5em, 9.5em 2em, 0.5em 2em, 0 2.5em, 0 2em);
+      background-image: linear-gradient(to top, rgb(66 66 66 / 37%), rgb(0 0 0 / 8%) 1.25em);
+  }
+
+  .packageRibbon_badge_inactive{
+    position: absolute;
+      /* z-index: 2000; */
+      line-height: 2em;
+      display: block;
+      width: 10em;
+      color: #fff;
+      height: 2.5em;
+      text-align: center;
+      text-decoration: none;
+      transform: translate(-32px, 18px) rotate(-45deg);
+      top: 0;
+      left: 0;
+      filter: drop-shadow(0 4px 7px rgba(0,0,0,0.4));
+  }
+  .packageRibbon_badge_inactive::after{
+    content: "";
+      position: absolute;
+      z-index: -1;
+      background-color: #cb2222;
+      border-bottom: 0.5em solid #cb2222;
+      transition: background-color 0.2s ease-in-out;
+      inset: 0;
+      clip-path: polygon(2em 0, 8em 0, 10em 2em, 10em 2.5em, 9.5em 2em, 0.5em 2em, 0 2.5em, 0 2em);
+      background-image: linear-gradient(to top, rgb(66 66 66 / 37%), rgb(0 0 0 / 8%) 1.25em);
+  }
+  

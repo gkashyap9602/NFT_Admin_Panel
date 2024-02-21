@@ -1,0 +1,145 @@
+.clientUsers-table [role='rowgroup'] > div {
+    min-height: auto;
+    padding: 16px 10px;
+  }
+  .clientUsers-table {
+    .ps-6 {
+      padding-left: 44px;
+    }
+    .send_rec {
+      i {
+        border: 1px solid #ccc;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        &.checked {
+          left: 0;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          -moz-transform: translateY(-50%);
+          transform: translateY(-50%);
+        }
+      }
+    }
+    .i-b {
+      color: #5482ba !important;
+    }
+    .p-0 {
+      padding: 0 !important;
+    }
+  }
+  
+  .txt-Button {
+    width: 100%;
+  }
+  
+  .editUser img {
+    height: 225px;
+    width: 100%;
+    padding: 10px;
+    border: 4px solid #8e8f94;
+  }
+  
+  .data-details-list {
+    border-radius: 4px;
+    border: 1px solid #d2dde9;
+  }
+  
+  .data-details-list > li {
+    display: flex;
+    align-items: center;
+  }
+  .data-details-list li:last-child .data-details-des {
+    border-bottom: none;
+  }
+  .data-details-des > li {
+    border-left: 1px solid #d2dde9;
+  }
+  
+  .data-details-head {
+    width: 220px;
+    padding: 14px 20px;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 20px;
+    border-right: 1px solid #d2dde9;
+  }
+  
+  .data-details-des {
+    border-bottom: 1px solid #d2dde9;
+    color: #495463;
+    display: flex;
+    flex-grow: 1;
+    font-size: 17px;
+    font-weight: 400;
+    justify-content: space-between;
+    line-height: 20px;
+    border-top: none;
+  
+    width: calc(100% - 220px);
+    padding: 14px 20px;
+  }
+  
+  .data-details-list .doc-name {
+    position: relative;
+  }
+  .data-details-list .doc-name h6 {
+    font-weight: 700;
+    font-size: 20px;
+    position: absolute;
+    left: 30%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .data-details-list .viewIcon svg {
+    width: 25px;
+    color: #41ff41 !important;
+  }
+  
+  .collectionBack svg{
+    color: #0d6efd
+  }
+  .data-details-list .imgContainer {
+    position: relative;
+    display: inline-block;
+    width: 280px;
+    height: 300px;
+    overflow: hidden;
+  }
+  .data-details-list .imgContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .data-details-list .imgContainer:hover .view {
+    display: block;
+    z-index: 999;
+  }
+  
+  .data-details-list .imgContainer:hover::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: #1411119e;
+    width: 100%;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+  
+  .data-details-list .view {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+  }
+  

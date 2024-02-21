@@ -1,0 +1,9 @@
+.div1 .leftItemTemp{
+    float: left;
+}
+.div1 .leftItemTemp svg{
+    font-size: 30px;
+    /* color:  #37b9d7; */
+    color:  #0d6efd;
+
+}

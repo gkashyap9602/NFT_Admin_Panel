@@ -1,0 +1,131 @@
+.name{
+  font-size: 16px;
+}
+.dragdrop-container {
+    border: 2px dashed #6e19c245;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(244, 245, 247, 67);
+    border-radius: 3px;
+  
+    .banner-img {
+      min-height: 232px;
+      max-height: 232px;
+      height: 100%;
+      max-width: 100%;
+      object-fit: scale-down;
+  
+      @media (max-width: 991px) {
+        min-height: 100px;
+        max-height: initial;
+      }
+    }
+  
+    .drag-n-drop-container {
+      padding: 50px 30px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+  
+      .drop-area {
+        text-align: center;
+  
+        img {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+  // .editTemplate img {
+  //   height: 450px;
+  //   width: 100%;
+  //   // padding: 10px;
+  // }
+  .template-screen {
+    display: block;
+    width: 300px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid #b3b3b3;
+    border-radius: 1px;
+    margin: 0 auto;
+  }
+  .template-screen img {
+    bottom: -1060px;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    left: 0;
+    z-index: 0;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: top 11s;
+    -moz-transition: top 11s;
+    -ms-transition: top 11s;
+    -o-transition: top 11s;
+    transition: bottom 11s;
+  }
+  .template-screen:hover img {
+    bottom: 0;
+    -webkit-transition: all 11s;
+    -moz-transition: all 11s;
+    -ms-transition: all 11s;
+    -o-transition: all 11s;
+    transition: all 11s;
+   
+  }
+  // .right-section{
+  //   margin-top: 90px;
+  // }
+  // .right-section {
+  //   margin-left: 110px;
+  // }
+  // .editTemplate{
+  //   margin-right: 265px;
+  // }
+
+  .editTemplate {
+    border: 2px dashed #6e19c245;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(244, 245, 247, 67);
+    border-radius: 3px;
+  
+    .banner-img {
+      min-height: 232px;
+      max-height: 232px;
+      height: 100%;
+      max-width: 100%;
+      object-fit: scale-down;
+  
+      @media (max-width: 991px) {
+        min-height: 100px;
+        max-height: initial;
+      }
+    }
+  
+    .edit-drag-n-drop-container {
+      padding: 50px 30px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+  
+      .edit-drop-area {
+        text-align: center;
+  
+        img {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+  .buttonAdd .btn{
+    // background-color: #37b9d7 !important;
+    border-color: #37b9d7 !important;
+  }
+  // .marginissue{
+  //   margin-top: 0px !important;
+  // }

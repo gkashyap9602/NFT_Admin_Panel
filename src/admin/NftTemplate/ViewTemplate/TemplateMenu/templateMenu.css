@@ -1,0 +1,20 @@
+.list-box .title{
+    color: #0d6dfb;
+}
+.list-box .edit-list{
+    border-bottom: 1px solid lightgrey !important;
+}   
+.list-box .collection-list li a{
+    color: rgb(81, 81, 81) !important;
+    font-size: 15px;
+}
+.list-box .collection-list li a:hover{
+    /* color: #37b9d7 !important; */
+    color: black !important;
+
+}
+.right-bar-enabled{
+    overflow: none !important;
+    padding-right: 0 !important;
+    overflow-y: auto !important;
+}

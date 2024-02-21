@@ -1,0 +1,84 @@
+.canvasPanel{
+    /* background-color: rgb(239, 239, 239); */
+    flex: 1 1;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    /* width: calc(100% - 470px); */
+    position: relative;
+    /* padding-top: 40px; */
+    min-height: calc(100vh - 120px);
+}
+.generate{
+    width: 100%;
+    /* background: #efefef; */
+    /* background: #fff; */
+    padding: 10px 0px;
+    font-size: 15px;
+}
+.maincontent{
+    padding: 6px 0px;
+}
+.upload{
+    border-radius: 15px;
+    box-shadow: 0px 0px 1px #6b9dff;
+    text-align: center;
+    margin: 0 auto;
+    border: none;
+    background: #fff;
+    width: 760px;
+}
+.drag{
+    font-size: 20px;
+    color: #7a8091;
+    padding: 60px 0px 30px 0px !important;
+    cursor: auto;
+    font-weight: 400;
+}
+.getStart{
+    background: #6b9dff;
+    border-radius: 10px;
+    vertical-align: middle;
+    width: 350px;
+    height: 56px;
+    text-indent: initial;
+    margin: 0px;
+    color: #fff;
+    display: inline-block;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+.getStart:hover{
+    background-color: #6b9dff;
+    color: #fff;
+}
+.pdfImage img{
+    width: 364px;
+    height: 260px;
+    margin: 50px auto 0px;
+    background-color: #fff;
+    margin-bottom: 70px;
+}
+.backButton{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    margin-top: 10px;
+    transform: rotate(180deg);
+}
+
+.leftPanel .backButton{
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+.backButton img{
+    width: 28px;
+    vertical-align: middle;
+    border-style: none;
+}

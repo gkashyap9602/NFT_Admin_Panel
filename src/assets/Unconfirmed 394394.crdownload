@@ -1,0 +1,673 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="High Court of Karnataka">
+<meta name="keywords" content="judiciary,case,causelist,judgement,karnataka,judge">
+<title>High Court of Karnataka Official Web Site</title>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="JS/jquery.session.js"></script>  
+<script type="text/javascript" src="js/access.js"></script>
+<script type="text/javascript" src="jquery-migrate-1.2.1.js"></script>
+<script type="text/javascript" src="CSSMenuFiles/jqueryslidemenu.js"></script>
+<script type="text/javascript" src="JS/jquery-ui-1.10.2.custom.min.js"></script>
+<script type="text/javascript" src="JS/jquery.maskedinput.min.js"></script>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="images/hckfavicon.ico">
+<link rel="stylesheet" type="text/css" href="CSSMenuFiles/jqueryslidemenu.css" />
+<!--<LINK href="stylesheet.css" type=text/css rel=stylesheet>-->
+<!--<LINK href="datepicker.css" type=text/css rel=stylesheet>-->
+<link rel="Stylesheet" type="text/css" href="CSS/jquery-ui-1.10.2.custom.min.css" />
+<!--<link href="CSS/style.css" rel="stylesheet" type="text/css" />-->
+<link rel="stylesheet" href="print-style.css" type="text/css" media="print" />
+<link rel="stylesheet" href="css/font-awesome/css/bootstrap.min.css">
+
+<style type="text/css">
+    body
+    {
+        text-align:auto;
+		min-height:500px;		
+    }
+    
+    body .mainText
+    {        
+        font-size: 12px;       
+    }
+    
+    .mainText a
+    {
+        font-size: 100%;        
+    }    
+    
+    .changer a:hover
+    {
+        background: transparent
+    }    
+            
+   a img{border:none;}
+   
+    #container {
+        text-align: left;
+        display: inline-block;
+        /* for ie6/7: */
+        *display: inline;
+        zoom: 1;
+    }
+    #sddm
+    {	margin: 0;
+	padding: 0;
+	z-index: 30}
+
+    #sddm li
+    {	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	font: bold 12px arial}
+
+    #sddm li a
+    {	display: block;
+	margin: 0 1px 0 0;
+	padding: 4px 10px;
+	width: auto;
+	background: #00659B;
+	
+	color: #FFFFFF;
+	text-align: center;
+	text-decoration: none}
+
+    #sddm li a:hover
+    {	background: #78C9F5}
+
+    #sddm div
+    {	position: absolute;
+	visibility: hidden;
+	margin: 0;
+	padding: 0;
+	background: #00659B;
+	border: 1px solid #5970B2}
+
+	#sddm div a
+	{	position: relative;
+		display: block;
+		margin: 0;
+		padding: 5px 10px;
+		width: auto;
+		white-space: nowrap;
+		text-align: left;
+		text-decoration: none;
+		background: #00659B;
+		color: #FFFFFF;
+		font: bold 13px arial}
+
+	#sddm div a:hover
+	{	background: #78C9F5;
+		color: #FFF}
+		
+	.uldiv{
+		z-index:10;
+	}	
+    </style>
+
+<script type="text/javascript">
+    function check_date_under_year(sender,args)
+    {
+        fromdat=document.getElementById(sender.fromDate).value;
+        todat=document.getElementById(sender.toDate).value;
+        fromday=fromdat.substring(0,2);
+        frommon=fromdat.substring(3,5);
+        fromyr=fromdat.substring(6,10);
+        tody=todat.substring(0,2);
+        tomon=todat.substring(3,5);
+        toyr=todat.substring(6,10);
+        sender.innerHTML = "From Date cannot be greater than To Date";
+        var from = fromdat.split("/");
+        var date1 = new Date(from[2],from[1]-1,from[0]);
+        from = todat.split("/");
+        var date2 = new Date(from[2],from[1]-1,from[0]);
+        var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+        var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));         
+        var nowdate = new Date();
+        if(date2 > nowdate)
+        {
+            sender.innerHTML = "To Date cannot be greater than today";
+             args.IsValid=false;
+        }
+        else if ( fromyr > toyr)
+        {
+            
+            args.IsValid=false;
+        } 	
+        else if ((frommon > tomon) && (fromyr >= toyr))
+        {
+            args.IsValid=false;
+        }
+        else if ((fromday > tody) && (frommon >=tomon) && (fromyr >= toyr))
+        {
+            
+            args.IsValid=false;
+        }
+        else{		
+           
+            
+            if(diffDays>365)
+            {
+                sender.innerHTML = "Search period is restricted to one year only";
+                args.IsValid=false;
+            }
+            else
+            {
+            args.IsValid=true;
+            }
+        }
+        
+    }
+    function validate(key)
+    {
+        //getting key code of pressed key
+        var keycode = (key.which) ? key.which : key.keyCode;
+        if (!(keycode==8 || keycode==46)&&(keycode < 48 || keycode > 57) || keycode == 9 || keycode == 13)
+        {
+        return false;
+        }
+    }
+</script>
+</head>
+<!--body onload="setFontSize();loadSearchOption(1,2);"-->
+
+<body onload="setFontSize();loadSearchOption(1,2);">
+	<a name="top"></a>	
+	<div width="99%" border="0">		
+		<div id="skip" height="30px" align="left" style="padding-left: 5px; display: table-cell; width: 80%;"><a class="skip-main" href="#skiptarget" align="left">Skip to main content</a></div>		
+		<div width="99%" class="topBar" height="110px">      					
+			<div width="100%" id="topBarImage" ><img src="images/toporiginal.jpg" style="position:relative; top: 0px; float: left; border: 0" alt="Title with Logo of High Court of Karnataka" usemap="#Map"/>
+			<map name="Map" id="Map">
+			<area shape="circle" coords="59,55, 49" href="http://karnatakajudiciary.kar.nic.in" title="Title with Logo of High Court of Karnataka" alt="Title with Logo of High Court of Karnataka" /></map></div>			
+			<div id ="accessibilty" height="30px" align="right" style="margin-right:10px; float:right;width=500px ">				
+			<a id="linkSmall" class="changer" href="#"><img src="images/butDecrease.jpg" style="position:relative; top: 0px; right: 5px"  alt="Decrease Font Size"/></a>
+			<a id="linkReset" class="changer" href="#"><img src="images/butReset.jpg" style="position:relative; top: 0px; right: 5px" alt="Reset Font Size"/></a>
+			<a id="linkLarge" class="changer" href="#"><img src="images/butIncrease.jpg" style="position:relative; top: 0px; right: 5px" alt="Increase Font Size"/></a>
+			<a id="colorMB" class="backchanger" href="#"><img src="images/MegentaOnBlack.jpg" style="position:relative; top: 0px; right: 5px"  alt="Magenta on Black Background"/></a>
+			<!--<a id="colorBY" class="backchanger" href="#"><img src="images/YellowOnBlue.jpg" style="position:relative; top: 0px; right: 5px"  alt="Yellow on Blue Background"/></a>-->
+			<a id="colorBW" class="backchanger" href="#"><img src="images/original.jpg" style="position:relative; top: 0px; right: 5px" alt="Original Background"/></a>			
+			<!--div id="print" style="float:right">
+			<img src="images/printer.png" width="16" height="15" style="font-size:12px;" /><a href="#" onclick="window.print();return false;" style="font-size:12px;" style="color:white;">Print</a></div>
+			</div-->	
+			<div id="print" style="float:right"><img src="images/azadi-ka-amrit-mahotsav.png" width="150px" height="104px" style="margin-top: 3px;" alt="Azadi Ka Amrit Mahotsav"/></div>
+			</div>	
+			</div>
+		</div>		
+
+	<div>  
+    	<div width="100%" align="left" style="background: #414141; margin-top: 5px;">
+	<a name="skiptarget"></a>	
+		<div id="myslidemenu" class="jqueryslidemenu">	<ul>
+			<li><a href="#">About Us</a>
+          	<ul class="uldiv">
+			<li><a href="history.php">History</a></li>
+			<li><a href="profiles.php">Judge's Profile</a></li>
+			<li><a href="judgesAssets&Liabilities.php">Assets of Sitting Judges</a></li>
+			<li><a href="sitting_list.php">Sitting List</a></li>
+			<li><a href="calendar.php">Calendar</a></li>
+			<li><a href="noticeBoard/casetypes.pdf" target="_blank">Case Types</a></li>
+			<li><a href="noticeBoard/subjectcat.pdf" target="_blank">Subject Categories</a></li>
+			<li><a href="#" onclick="window.open('http://vcourts.gov.in/virtualcourt/');">Virtual Courts</a></li>
+			<li><a href="#" onclick="window.open('https://efiling.ecourts.gov.in/kar/');">Online e-Filing</a></li>
+			<li><a href="#" onclick="window.open('https://karnatakajudiciary.kar.nic.in/cconline/public/');">Online Copy Application & e-Payment of Court Fee</a></li>
+			<li><a href="hcklibrary/index.php" target="_blank">High Court Library</a></li>
+			<li><a href="hck-registry.php">Registry Officer's</a></li>					
+			<li><a href="gallery.php">Virtual Courts Gallery</a></li>	
+			<li><a href="videogallery.php">Photo/Video Gallery</a></li>				
+			<li><a href="RTI-Notfn.php">RTI Rules 2005 & Notifications</a></li>
+			<li><a href="lokadalathStats.php">Lok Adalath-Statstics</a></li>
+			<li><a href="committees.php">Committees</a></li>							
+			<li><a href="https://districts.ecourts.gov.in/karnataka" target="_blank">District Courts</a></li>			
+			<li><a href="commCourt.php" onclick="window.open('http://karnatakajudiciary.kar.nic.in/commercialCourts/ccourts/');">Commercial Courts</a></li>			
+			<li><a href="contactus.php">Contact Us</a></li>			
+		  </ul>
+		</li>
+
+		<li><a href="#">Services</a>
+			<ul class="uldiv">				
+				<li><a href="https://karnatakajudiciary.kar.nic.in/cconline/public/" target="_blank">Online Services</a></li>
+				<!--li><a href="https://karnatakajudiciary.kar.nic.in/hck_sms_reg/" target="_blank">Causelist through SMS</a></li-->
+				<li><a href="causelist_through_sms.php">Causelist through SMS</a></li>
+				<li><a href="services/registration-through-sms.pdf" target="_blank">Registration for causelist through SMS</a></li>
+				<li><a href="services/pressnotesms_final dedication.pdf" target="_blank">SMS Facilities and KIOSKS</a></li>
+				<li><a href="https://karnatakajudiciary.kar.nic.in/advreg/" target="_blank">Advocates Registration</a><img src="images/new.gif"></li>
+			</ul>
+		</li>	
+
+		<li><a href="cause_list.php">Cause Lists</a>			
+		</li>				
+				
+		
+		<li><a href="case_status.php">Case Status</a>		
+		</li>
+		
+		<li><a href="njdg_case_status.php">NJDG Case Status</a>
+			<ul class="uldiv">
+				<li><a href="https://hcservices.ecourts.gov.in/ecourtindiaHC/index_highcourt.php?state_cd=3&dist_cd=1&stateNm=Karnataka" target="_blank">Principal Bench</a></li>
+				<li><a href="https://hcservices.ecourts.gov.in/ecourtindiaHC/index_highcourt.php?state_cd=3&dist_cd=1&court_code=2&stateNm=Karnataka" target="_blank">Dharwad Bench</a></li>
+				<li><a href="https://hcservices.ecourts.gov.in/ecourtindiaHC/index_highcourt.php?state_cd=3&dist_cd=1&court_code=3&stateNm=Karnataka" target="_blank">Kalaburagi Bench</a></li>				
+			</ul>
+		</li>
+
+		<li><a href="certified_copy_status.php">Cert. Copy Status</a>			
+		</li> 
+
+		<li><a href="https://karnatakajudiciary.kar.nic.in/repository/daily_order.php" target="_blank">Daily Orders</a></li>
+		<li><a href="/judgment_search.php">Judgments</a></li>
+		<!--li><a href="http://karnatakajudiciary.kar.nic.in:8080/repository/rep_judgment.php" target="_blank">Judgments</a></li-->
+		<!--li><a href="#">Judgments</a>
+			<ul class="uldiv">
+				<li><a href="http://karnatakajudiciary.kar.nic.in:8080/repository/rep_judgmentcase.php" target="_blank">Quick Search by Case Number</a></li>
+				<li><a href="http://karnatakajudiciary.kar.nic.in:8080/repository/rep_judgment.php" target="_blank">Detailed Search</a></li>		
+			</ul>
+		</li-->
+
+		<li><a href="notification.php">Notifications</a>
+			<ul class="uldiv">
+				<li><a href="generalNotific.php">General</a></li>
+				<li><a href="dailyNotification.php">Daily</a></li>
+			<!-- <li><a href="adminjudges.php">Administrative Judges</a></li> -->
+				<li><a href="arbitrationNotfn.php">Arbitration</a></li>
+				<li><a href="govtNotification.php">Government Notifications</a></li>				
+				<li><a href="transfers.php">Transfers</a></li>
+				<li><a href="recruitment.php">Recruitments</a></li>
+				<li><a href="districtrecruitment.php">District-Recruitment</a></li>
+				<li><a href="tenderNotification.php">Tenders</a></li>
+				<li><a href="Circulars.php">Circulars</a></li>
+				<li><a href="generalNotification/acc2.pdf" target="_blank">Notification of showing list of unclaimed deposits</a></li>
+				<li><a href="seniority-lists.php">Seniority List</a></li>
+
+			</ul>
+		</li>
+		<li><a href="#">Others</a>
+			<ul class="uldiv">
+				<li><a href="http://supremecourtofindia.nic.in" target="_blank">Supreme Court of India</a></li>
+				<li><a href="http://courtnic.nic.in" target="_blank">Case Status(SC & HC)</a></li>
+				<li><a href="http://judis.nic.in" target="_blank">Judgments</a></li>
+				<li><a href="http://doj.gov.in" target="_blank">Department of Justice</a></li>
+				<li><a href="http://www.sclsc.nic.in" target="_blank">Supreme Court Legal Services Committee</a></li>
+				<li><a href="hlsa/index.html" target="_blank">High Court Legal Services Committee</a></li>
+				<li><a href="https://kslsa.kar.nic.in" target="_blank">Karnataka State Legal Services Authority</a></li>
+				<li><a href="https://nyayadegula.kar.nic.in/" target="_blank">Bengaluru Mediation Centre</a></li>
+				<li><a href="http://kjablr.kar.nic.in" target="_blank">Karnataka Judicial Academy</a></li>
+				<li><a href="otherLinks.php">More</a></li>
+			</ul>
+		</li>
+	</ul>
+		
+	</div>
+		 
+
+<br/>	
+</div>
+<br/>
+<script type="text/javascript" src="JS/jquery-1.9.1.min.js"></script>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="JS/jquery.session.js"></script>
+<script type="text/javascript" src="JQuery-Session-Plugin-master/jquery.session.js"></script>    
+<script type="text/javascript" src="js/access.js"></script>
+<script type="text/javascript" src="jquery-migrate-1.2.1.js"></script>
+<div class="mainText">
+ <link href="sliderTheme/js-image-slider.css" rel="stylesheet" type="text/css" />
+ <script src="sliderTheme/js-image-slider.js" type="text/javascript"></script>
+ <link href="sliderTheme/generic.css" rel="stylesheet" type="text/css" />
+ <style>
+.css-serial {
+  counter-reset: serial-number;  /* Set the serial number counter to 0 */
+}
+.css-serial td:first-child:before {
+  counter-increment: serial-number;  /* Increment the serial number counter */
+  content: counter(serial-number);  /* Display the counter */
+}
+</style>
+
+<table width="100%" border="0">
+ 	<tr>
+ 		<td height="528" rowspan="2" align="left"  valign="top"><table width="100%" border="0">
+          <tr>
+            <td><table width="219" height="270" border="0" align="left" cellpadding="0" cellspacing="0" style="border: solid 1px orange" id="tblAbout" class="box1middleback">
+              <tr>
+                <td height="77" colspan="2" align="center" valign="middle" class="h2" style="height:30px;border-bottom: solid 1px orange; background-color: orange" id="tdAbout">About High Court</td>
+              </tr>
+	      <tr>
+                <td width="15" height="10" valign="middle"></td>               	
+              </tr>
+              <tr>
+                <td width="15" height="23" valign="middle"></td>
+                <td valign="middle"><div align="left"><a class="hyperlinkfonts" href="history.php"> <font size="3">History</font></a></div></td>
+              </tr>
+              <tr>
+                <td valign="middle" height="23" style="text-align:center"><!--div align="right"><img src="images/bullet1.gif" width="39" height="26" alt="bullet" /></div--></td>
+                <td  valign="middle"><div align="left"><a class="hyperlinkfonts" href="profiles.php"><font size="3"> Hon'ble Judges' Profile </font></a></div></td>
+              </tr>
+	      <tr>
+                <td valign="middle" height="23" style="text-align:center"><div align="right"><!--img src="images/bullet1.gif" width="39" height="26" alt="bullet" /--></div></td>
+                <td  valign="middle"><div align="left"><a class="hyperlinkfonts" href="hck-registry.php"><font size="3">Officers of Registry</font></a></div></td>
+              </tr>
+ 		<tr> 
+	  	<td valign="middle" height="23" style="text-align:center"><div align="right"><!--img src="images/bullet1.gif" width="39" height="26" alt="bullet" /--></div></td>
+		<td valign="middle"><div align="left">
+		<!--a class="hyperlinkfonts" href="#" onClick="window.open('hckcalendar/flatcal.htm','','width=1000,height=460,toolbar=no,scrollbars=yes,status=no,resizable=no');"><font size="3">Calendar-2018</font></a-->				
+		<!--img src="images/new.gif"--> <a class="hyperlinkfonts" href="calendar.php"><font size="3">Calendar</font></a>  <img src="images/new.gif"><a class="hyperlinkfonts" target="blank_" href="/hckcalendar/Calender-2023.pdf"><font size="3">Calendar-2023</font></a></div></td>                		 		
+	       </tr>	     		
+              <tr>
+                <td valign="middle" height="23" style="text-align:center"><div align="right"><!--img src="images/bullet1.gif" width="39" height="26" alt="bullet" /--></div></td>
+                <td  valign="middle"><div align="left"><img src="images/new.gif"> <a class="hyperlinkfonts" href="sitting_list.php"><font size="3">Sitting List</font></a></div></td>
+              </tr>
+ 		<tr>
+                <td valign="middle" height="23" style="text-align:center"><div align="right"><!--img src="images/bullet1.gif" width="39" height="26" alt="bullet" /--></div></td>
+                <td  valign="middle"><div align="left"><a class="hyperlinkfonts" href="noticeBoard/casetypes.pdf" target="blank_"><font size="3">Case Types</font></a></div></td>
+              </tr>
+		 <tr>
+                <td valign="middle" height="23" style="text-align:center"><div align="right"><!--img src="images/bullet1.gif" width="39" height="26" alt="bullet" /--></div></td>
+                <td  valign="middle"><div align="left"><a class="hyperlinkfonts" href="noticeBoard/subjectcat.pdf" target="blank_"><font size="3">Subject Categories</font></a></div>
+		</td>
+		</tr>
+		<tr>
+                <td valign="middle" height="23" style="text-align:center"><div align="right"><!--img src="images/bullet1.gif" width="39" height="26" alt="bullet" /--></div></td>
+                <td valign="middle"><div align="left"><a class="hyperlinkfonts" href="scrutiny-objs-points.php"><font size="3">Scrutiny Objection Points</font></a></div></td>
+              </tr>
+		<tr>
+                <td valign="middle" height="23" style="text-align:center"><div align="right"><!--img src="images/bullet1.gif" width="39" height="26" alt="bullet" /--></div></td>
+                <td valign="middle"><div align="left"><img src="images/new.gif"> <a class="hyperlinkfonts" href="#" onclick="window.open('https://ecommitteesci.gov.in/publication/e-courts-services-mobile-application-manual/');"><font size="3">e-Courts Services Mobile Application – Manual</font></a></div></td>
+              </tr>
+		<tr>
+                <td valign="middle" height="23" style="text-align:center"><div align="right"><!--img src="images/bullet1.gif" width="39" height="26" alt="bullet" /--></div></td>
+                <td valign="middle"><div align="left"><a class="hyperlinkfonts" href="#" onclick="window.open('http://vcourts.gov.in/virtualcourt/');"><font size="3">Virtual Courts</font></a></div></td>
+              </tr> 
+		<tr>
+                <td valign="middle" height="23" style="text-align:center"><div align="right"><!--img src="images/bullet1.gif" width="39" height="26" alt="bullet" /--></div></td>
+                <td valign="middle"><div align="left"><a class="hyperlinkfonts" href="#" onclick="window.open('https://efiling.ecourts.gov.in/kar/');"><font size="3">Online e-Filing</font></a> </div></td>
+              </tr> 
+	      <tr>
+                <td valign="middle" height="23" style="text-align:center"><div align="right"><!--img src="images/bullet1.gif" width="39" height="26" alt="bullet" /--></div></td>
+                <td valign="middle"><div align="left"><a class="hyperlinkfonts" href="#" onclick="window.open('https://karnatakajudiciary.kar.nic.in/cconline/public/');"><font size="3">Online Services</font></a> </div></td>
+              </tr>
+	      <tr>
+                <td valign="middle" height="23" style="text-align:center"><div align="right"><!--img src="images/bullet1.gif" width="39" height="26" alt="bullet" /--></div></td>
+                <td valign="middle"><div align="left"><img src="images/new.gif"> <a class="hyperlinkfonts" href="#" onclick="window.open('https://karnatakajudiciary.kar.nic.in/advreg/');"><font size="3">Online Digital Case Diary</font></a> </div></td>
+              </tr> 
+		<tr>
+                <td valign="middle" height="23" style="text-align:center"><div align="right"><!--img src="images/bullet1.gif" width="39" height="26" alt="bullet" /--></div></td>
+                <td valign="middle"><div align="left"><a class="hyperlinkfonts" href="onlinelectures.php" ><font size="3">Online lectures</font></a> </div></td>
+              </tr> 
+
+		<tr>
+                <td valign="middle" height="23" style="text-align:center"><div align="right"><!--img src="images/bullet1.gif" width="39" height="26" alt="bullet" /--></div></td>
+                <td valign="middle"><div align="left"><a class="hyperlinkfonts" href="/hcklibrary/index.php" target="_blank"><font size="3">High Court Library</font></a></div></td>
+              </tr>
+	      <tr>
+                <td valign="middle" height="23" style="text-align:center"><div align="right"><!--img src="images/bullet1.gif" width="39" height="26" alt="bullet" /--></div></td>
+                <td valign="middle"><div align="left"><!--img src="images/new.gif"--> <a class="hyperlinkfonts" href="sr-adv-designate.php"><font size="3">Designation of Senior Advocates</font></a></div></td>
+              </tr>
+	     <tr>
+                <td valign="middle" height="23" style="text-align:center"><div align="right"><!--img src="images/bullet1.gif" width="39" height="26" alt="bullet" /--></div></td>
+                <td  valign="middle"><div align="left"><a class="hyperlinkfonts" href="gallery.php"><font size="3">Virtual Courts Gallery</font></a> </div></td>
+              </tr>
+		<tr>
+                <td valign="middle" height="23" style="text-align:center"><div align="right"><!--img src="images/bullet1.gif" width="39" height="26" alt="bullet" /--></div></td>
+                <td  valign="middle"><div align="left"><a class="hyperlinkfonts" href="videogallery.php"><font size="3"> Photo/Video Gallery</font></a> </div></td>
+              </tr>
+		<tr>
+                <td valign="middle" height="23" style="text-align:center"><div align="right"><!--img src="images/bullet1.gif" width="39" height="26" alt="bullet" /--></div></td>
+                <td valign="middle"><div align="left"><a class="hyperlinkfonts" href="RTI-Notfn.php"><font size="3">RTI</font></a></div></td>
+              </tr> 
+	      <tr>
+                <td valign="middle" height="23" style="text-align:center"><!--div align="right"><img src="images/bullet1.gif" width="39" height="26" alt="bullet"></div--></td>
+                <td  valign="middle"><div align="left"><img src="images/new.gif"> <a class="hyperlinkfonts" href="court-CCR.php"><font size="3">CCR of Courts</font></a></div></td>
+              </tr>
+		<tr>
+                <td valign="middle" height="23" style="text-align:center"><!--div align="right"><img src="images/bullet1.gif" width="39" height="26" alt="bullet"></div--></td>
+                <td  valign="middle"><div align="left"><a class="hyperlinkfonts" href="lokadalathStats.php"><font size="3">Lok Adalath-Statistics</font></a></div></td>
+              </tr>
+	      <tr>
+               	<td valign="middle" height="23" style="text-align:center"><div align="right"><!--img src="images/bullet1.gif" width="39" height="26" alt="bullet" /--></div></td>
+               	<td valign="middle"><div align="left"><a class="hyperlinkfonts" href="https://districts.ecourts.gov.in/karnataka" target="blank_"><font size="3">District Courts</font></a></div></td>
+              </tr>
+	      <tr>
+               	<td valign="middle" height="23" style="text-align:center"><div align="right"><!--img src="images/bullet1.gif" width="39" height="26" alt="bullet" /--></div></td>
+               	<td valign="middle"><div align="left"><img src="images/new.gif"> <a class="hyperlinkfonts" href="https://justiceclock.ecourts.gov.in/justiceClock/?p=home/state&fstate_code=3" target="blank_"><font size="3">Virtual Justice Clock of District Courts</font></a></div></td>
+              </tr>  
+		<tr>
+                <td valign="middle" height="23" style="text-align:center"><div align="right"><!--img src="images/bullet1.gif" width="39" height="26" alt="bullet" /--></div></td>
+                <td valign="middle"><div align="left"> <a class="hyperlinkfonts" href="commercialCourts/ccourts" target="_blank"><font size="3">Commercial Courts</font></a></div></td>
+              </tr> 
+ 	      <tr>
+                <td valign="middle" height="23" style="text-align:center"><!--div align="right"><img src="images/bullet1.gif" width="39" height="26" alt="bullet"></div--></td>
+                <td  valign="middle"><div align="left"><img src="images/new.gif"> <a target="_blank" class="hyperlinkfonts" href="/noticeBoard/vc-facility-child-witness-22042022.pdf"><font size="3">VC Facility for Child Witness</font></a></div></td>
+              </tr>
+	      <tr>
+                <td valign="middle" height="23" style="text-align:center"></td>
+                <td  valign="middle"><div align="left"><img src="images/new.gif"> <a target="_blank" class="hyperlinkfonts" href="/Circulars/vwdc-guidelines.pdf"><font size="3">VWDC Guidelines</font></a></div></td>
+              </tr>			
+	      <tr>
+                <td valign="middle" height="23" style="text-align:center"><div align="right"><!--img src="images/bullet1.gif" width="39" height="26" alt="bullet" /--></div></td>
+                <td  valign="middle"><div align="left"><a class="hyperlinkfonts" href="contactus.php"><font size="3">Contact Us</font></a></div></td>
+              </tr>  
+	      <tr>
+                <td height="20" colspan="2" ></td>
+              </tr>
+            </table></td>
+          </tr>
+	  <tr>
+ 	  <td><br></td>
+	  </tr> 
+	<tr>
+ 	  <td height="199" align="left" valign="middle"><div align="center"><a class="hyperlinkfonts" style="font-weight: bold; font-family: Arial, Helvetica, sans-serif" onClick="window.open('hckcalendar/flatcal.htm','','width=800,height=500,toolbar=no,scrollbars=yes,status=no,resizable=no');"><font size="3">Calendar</font></a>
+ 	    </div><iframe src="hckMonthCal/iflateng.htm" name="[gToday[0],12]:normal:agenda.js:gfFlat_12" width="210" height="190" scrolling="No" frameborder="0" id="[gToday[0],12]:normal:agenda.js:gfFlat_12"></iframe>
+	</td></tr>         
+      </table></td>
+	<td width="100%" rowspan="2" valign="top"><table width="100%" height="520" border="0">
+      <tr>	
+       <td height="341" colspan="5" align="center" valign="middle">
+	<marquee  scrollamount="5" onmouseover="this.stop();" onMouseOut="this.start();">
+	<a class="hyperlinkfonts" href="allnotice.php" target="_blank"> <font color="#FF0000" size="2"><b> View all </b></font></a><b>|</b>
+	<img src="images/new.gif"> <font color="#0000FF" size="2"> <a class="hyperlinkfonts" href="/govtNotifications/memo-rj-220-2022.pdf" target="_blank">Gazette Notification No.HCLC NO.62/2020 Dated 14.12.2022</a></font>
+	<img src="images/new.gif"> <font color="#0000FF" size="2"> <a class="hyperlinkfonts" href="/sittinglists/winter-vacation-2022.pdf" target="_blank">Winter Vacation-2022 Sitting List</a></font>
+	<img src="images/new.gif"> <font color="#0000FF" size="2"> <a class="hyperlinkfonts" href="/noticeBoard/hckb-notfn-12122022.pdf" target="_blank">High Court Notification dated 12.12.2022 regarding sitting of CH-1 at 10.00 A.M from 13.12.2022 to 15.12.2022</a></font>
+	<img src="images/new.gif"> <font color="#0000FF" size="2"> <a class="hyperlinkfonts" href="/Circulars/hck-circular-R(J)-216-2022.pdf" target="_blank">High Court Circular No. R(J) 216/2022 dated 07.12.2022</a></font>
+	<img src="images/new.gif"> <font color="#0000FF" size="2"> <a class="hyperlinkfonts" href="/recruitmentNotifications/ngt-ar-recruitment-14112022.pdf" target="_blank">Notification regarding Recruitment of Assistant Registrar in Natioal Green Tribunal, Principal Bench, New Delhi</a></font>
+	<img src="images/new.gif"> <font color="#0000FF" size="2"> <a class="hyperlinkfonts" href="/noticeBoard/notice-amicus-curiae.pdf" target="_blank">Supreme Court Notice for Amicus Curiae dated 20.10.2022</a></font></marquee>
+	<!--br><font color="#ff0000" size="4"><marquee scrollamount="3" onmouseover="this.stop();" onMouseOut="this.start();"><img src="images/new.gif"> High Court website will not be available on 18/09/2022 from 1PM to 7PM due to maintenance at the Data Centre. Inconvenience is regretted.</marquee></font-->		
+	<div align="center">
+	<div id="sliderFrame">
+        <div id="slider">
+            <img src="sliderTheme/g20india-logo.jpg" alt="G20 India" width="600" height="398"/>			
+	    <img src="sliderTheme/hck-blr.jpg" alt="Principal Bench, Bengaluru" />
+            <img src="sliderTheme/hckdha1.jpg" alt="" />
+            <img src="sliderTheme/hckgul1.jpg" alt="" />
+        </div>
+    </div>
+       </div></td>
+      </tr>
+      <tr>
+        <td colspan="5"><div align="center"><strong>Online Display Boards</strong></div>        
+		<div align="center"><a href="display_board.php" style="text-decoration: none" target="_blank">   <img src="images/hckblr.png" alt="Bengaluru - Online Display Board" border="0" align="absmiddle"/>
+			    	    <a href="dwd_display_board.php" style="text-decoration: none" target="_blank"> <img src="images/hckdwd.png" alt="Dharwad - Online Display Board" border="0" align="absmiddle"/></a>
+			    	    <a href="klb_display_board.php" style="text-decoration: none" target="_blank"><img src="images/hckglb.png" alt="Gulbarga - Online Display Board" border="0" align="absmiddle"/></a>
+				    <a href="http://karnatakajudiciary.kar.nic.in/dashboard_display/index2.php" style="text-decoration: none" target="_blank"><img src="images/justiceclock.png" alt="Virtual Justice Clock" border="0" align="absmiddle"/></a></div></p></td></div></p></td>
+      </tr>
+	  <tr>
+        <td colspan="5"><div align="center"><strong>Video Conference Links</strong></div>       
+		<div align="center"><a href="/chvclinks.php?benchid=B" style="text-decoration: none"><img src="images/hckblr.png" alt="Bengaluru - Video Conference Links" border="0" align="absmiddle"/>		
+		<a href="/chvclinks.php?benchid=D" style="text-decoration: none"> <img src="images/hckdwd.png" alt="Dharwad Bench - Video Conference Links" border="0" align="absmiddle"/></a>
+		<a href="/chvclinks.php?benchid=K" style="text-decoration: none"> <img src="images/hckglb.png" alt="Kalaburagi Bench - Video Conference Links" border="0" align="absmiddle"/></a>
+      </tr>	  
+      <tr><td>	
+      <div align="center"><iframe id="hckmain" src="zoomStyle/scid.htm" marginwidth="0" marginheight="0" hspace="0" vspace="0" scrolling="no" frameborder="0" height="125px" width="500px"></iframe></td></div>
+      </td></tr>	 
+          
+         </table></td>
+	<td width="250" align="left" valign="top">
+	<table border="0" align="right" cellpadding="0" cellspacing="0" class="JudgmentsOrdersBoard" style="width:197px;height:275px">       
+        <td width="205" height="259" valign="top" style="text-align:center; vertical-align:middle">
+	<marquee direction="up" style="width:165px;height:175px" scrollamount="3"  onmouseover="this.stop();" onMouseOut="this.start();">
+        <div align="center">		
+		<table width="90%"   border="0"  cellpadding="1" cellspacing="0" class="css-serial">
+		<!--tr>	
+		<td  valign="top"></td>
+		<td colspan="2" align="left"><a class="hyperlinkfonts" href="judgements/CCC_2019_2018_20221130011415.pdf" target="_blank">ORDER IN CIVIL CONTEMPT PETITION NO.2019 OF 2018</a> <img src="images/new.gif" ></td>
+		</tr-->
+		<tr>	
+		<tr>	
+		<td  valign="top"></td>
+		<td colspan="2" align="left"><a class="hyperlinkfonts" href="judgements/MFA_4617_2022_20221130011509.pdf" target="_blank">JUDGMENT IN MISCELLANEOUS FIRST APPEAL NO.4617 OF 2022</a> <img src="images/new.gif" ></td>
+		</tr>
+		<tr>	
+		<td  valign="top"></td>
+		<td colspan="2" align="left"><a class="hyperlinkfonts" href="judgements/WA-900-2022-connected.pdf" target="_blank">WRIT PETITION No.900/2022(EDN-RES) and Connected</a> <img src="images/new.gif" ></td>
+		</tr>
+		<tr>	
+		<td  valign="top"></td>
+		<td colspan="2" align="left"><a class="hyperlinkfonts" href="judgements/WP_15429_2022_connected.pdf" target="_blank">WRIT PETITION No.15429/2022 and Connected</a> <img src="images/new.gif" ></td>
+		</tr>
+		<tr>	
+		<td  valign="top"></td>
+		<td colspan="2" align="left"><a class="hyperlinkfonts" href="judgements/WP19386.2016.pdf" target="_blank">WRIT PETITION No.19386/2016 (GM-RES) and Connected</a> <img src="images/new.gif" ></td>
+		</tr>
+		<tr>	
+		<td  valign="top"></td>
+		<td colspan="2" align="left"><a class="hyperlinkfonts" href="judgements/WP-15139-21-CW.pdf" target="_blank">INTERIM DIRECTIONS IN W.P.No.15144/2021</a> <img src="images/new.gif" ></td>
+		</tr>										 
+		</table>				
+              </td></tr>
+      		<tr></tr>
+        </table></td>
+  </tr>
+ 	<tr> 
+	<td width="250" align="left" valign="top">
+	<table border="0" align="right" cellpadding="0" cellspacing="0" class="Notifications" style="width:190px;height:275px">       
+        <td width="150" height="259" valign="top" style="text-align:center; vertical-align:middle">
+	<marquee direction="up" style="width:145px;height:175px" scrollamount="3"  onmouseover="this.stop();" onMouseOut="this.start();">
+        <div align="center">
+		<table width="50%"   border="0"  cellpadding="1" cellspacing="1" class="css-serial">
+
+		<tr>
+		<td  valign="top"></td>
+		<td colspan="2" align="left"><a class="hyperlinkfonts" href="/recruitmentNotifications/hcmp-adv-dj.pdf" target="_blank">Short Notice of Advertisement of Direct Recruitment of District Judge (Entry Level) in High Court of Madhya Pradesh</a><img src="images/new.gif" /></td>
+		</tr>
+		<tr>
+		<td  valign="top"></td>
+		<td colspan="2" align="left"><a class="hyperlinkfonts" href="/distJudges2022.php" target="_blank">Provisional Key answers for the questions of Preliminary Examination for the post of District Judges by direct recruitment held on 18.12.2022.</a><img src="images/new.gif" /></td>
+		</tr>
+		<tr>
+		<td  valign="top"></td>
+		<td colspan="2" align="left"><a class="hyperlinkfonts" href="/civilJudges2022.php" target="_blank">Result of the Main Written Examination and Intimation of regarding date of Viva-voce for the post of Civil Judges.</a><img src="images/new.gif" /></td>
+		</tr>
+
+		<tr>
+		<td  valign="top"></td>
+		<td colspan="2" align="left"><a class="hyperlinkfonts" href="/distJudges2022.php" target="_blank">List of the candidates, who are eligible to appear for Preliminary Examination scheduled to be held on 18.12.2022 for the post of District Judges by direct recruitment.</a><img src="images/new.gif" /></td>
+		</tr>
+
+		<tr>
+		<td  valign="top"></td>
+		<td colspan="2" align="left"><a class="hyperlinkfonts" href="/oathcomm2022.php" target="_blank">Intimation for the process of document verification of eligible candidates for  for Appointment of Oath Commissioners </a><img src="images/new.gif" /></td>
+		</tr>
+		<tr>
+		<td  valign="top"></td>
+		<td colspan="2" align="left"><a class="hyperlinkfonts" href="/typists2021.php" target="_blank">Final Selection List for the post of Typists-2021</a><img src="images/new.gif" /></td>
+		</tr>
+
+		<tr>
+		<td  valign="top"></td>
+		<td colspan="2" align="left"><a class="hyperlinkfonts" href="/lcra2022.php" target="_blank">Selection Proceedings dated 09-09-2022 for the post of Law Clerk-cum-Research Assistants.</a><img src="images/new.gif" /></td>
+		</tr>
+		<tr>
+		<td  valign="top"></td>
+		<td colspan="2" align="left"><a class="hyperlinkfonts" href="/govtNotifications/gonotfn_20072022.pdf" target="_blank">Notification regarding re-designation of officer</a><img src="images/new.gif" /></td>
+		</tr>
+		<tr>
+		<td  valign="top"></td>
+		<td colspan="2" align="left"><a class="hyperlinkfonts" href="/sda2021.php" target="_blank">Selection List of the Candidates for the post of Second Division Assistant</a><img src="images/new.gif" /></td>
+		</tr>	
+
+		<!--tr>
+		<td  valign="top"></td>
+		<td colspan="2" align="left"><a class="hyperlinkfonts" href="/distJudges2021.php" target="_blank">Final Selection List of Candidates for the post of District Judges by direct recruitment.</a><img src="images/new.gif" /></td>
+		</tr>
+		<tr>
+		<td  valign="top"></td>
+		<td colspan="2" align="left"><a class="hyperlinkfonts" href="/groupdLC2022.php" target="_blank">Notification No. HCRB 17/2022 for recruitment of 21 posts of GROUP-D under Local Cadre.</a><img src="images/new.gif" /></td>
+		</tr>
+		<tr>
+		<td  valign="top"></td>
+		<td colspan="2" align="left"><a class="hyperlinkfonts" href="/distJudges2022.php" target="_blank">Inviting Applications for filling up of 16 posts of District Judges by Direct Recruitment.</a><img src="images/new.gif" /></td>
+		</tr>
+		<tr>
+		<td  valign="top"></td>
+		<td colspan="2" align="left"><a class="hyperlinkfonts" href="/distJudgespromotion2022.php" target="_blank">Intimation regarding Limited Departmental Competitive Examination scheduled to be held on 30.10.2022 and to download admission card to the eligible Sr.Civil Judges for promotion to the post of District Judges under 10% Category </a><img src="images/new.gif" /></td>
+		</tr>
+		<tr>
+		<td  valign="top"></td>
+		<td colspan="2" align="left"><a class="hyperlinkfonts" href="distJudgespromotion2022.php" target="_blank">Notification No. GOB(I) 47(1)/2022 to fill up the posts of District Judges under 10% Category through Limited Departmental Competitive Examination</a><img src="images/new.gif" /></td>
+		</tr>
+		<tr>
+		<td  valign="top"></td>
+		<td colspan="2" align="left"><a class="hyperlinkfonts" href="/translators2021.php" target="_blank">Selection list of candidates to the post of Translators 2021.</a><img src="images/new.gif" /></td>
+		</tr>
+		<tr>
+		<td  valign="top"></td>
+		<td colspan="2" align="left"><a class="hyperlinkfonts" href="/groupdRPC2022.php" target="_blank">Notification No. HCRB 14/2022 for recruitment of 129 posts of GROUP-D under Residual Parent Cadre.</a><img src="images/new.gif" /></td>
+		</tr>
+		<tr>
+		<td  valign="top"></td>
+		<td colspan="2" align="left"><a class="hyperlinkfonts" href="/lcra2022.php" target="_blank">List of eligible candidates called for Viva-Voce on 1st September-2022 & 2nd September-2022 to the post of Law Clerk – cum – Research Assistants</a><img src="images/new.gif" /></td>
+		</tr>
+		<tr>
+		<td  valign="top"></td>
+		<td colspan="2" align="left"><a class="hyperlinkfonts" href="/oathcomm2022.php" target="_blank">Notification No. DJA-I 33/2022 for receiving the application for the appoinment of Advocates as OATH Commissioners.</a><img src="images/new.gif" /></td>
+		</tr-->
+														
+                </table>
+              </div>
+            </marquee></td>        
+        </table>
+
+	</td></tr>  
+    </table>
+ 	
+</table>
+</div>
+
+<div id ="footer" style="width: 100%; position:relative; z-index: 1; display: table; height:auto;" class="topBar">
+		<div style="display: inline-flex;width:100%" class="mainText">
+			<div style="width: 42%; display: block; float:left">
+				<div style="font-size:12px; font-weight:bold;" align="center">
+					<br/>					
+					<a href="https://karnatakajudiciary.kar.nic.in/disclaimer.php" style="text-decoration: none"><font color="white">Disclaimer</a></font>&nbsp; | &nbsp;
+					<a href="https://karnatakajudiciary.kar.nic.in/website-policy.php" style="text-decoration: none"><font color="white">Website Policy</a></font>&nbsp; | &nbsp;
+					<a href="https://karnatakajudiciary.kar.nic.in/accessibility-statement.php" style="text-decoration: none"><font color="white">Accessibility Statement</a></font>&nbsp; |&nbsp;
+					<a href="https://karnatakajudiciary.kar.nic.in/sitemap.php" style="text-decoration: none"><font color="white">Sitemap</a></font>&nbsp; | &nbsp;
+					<a href="https://karnatakajudiciary.kar.nic.in/screenreader.php" style="text-decoration: none"><font color="white">Screen Reader</a></font>
+				</div>				
+				<p align="center" style="line-height:15px; margin-top:10px;">
+					<font color="black"><b>HCK1KA03 | Last Updated:30/12/2022&nbsp; | &nbsp;2014 &copy; High Court of Karnataka. All Rights Reserved</b></font><br/>
+				</p>				
+			</div>
+			<div style="width: 12%; display: block; float:left"><font color="white" align=center><b>Content Maintained By<br/>
+				<a href ="https://karnatakajudiciary.kar.nic.in" style="text-decoration: none">
+					<img src="https://karnatakajudiciary.kar.nic.in/images/highcourtlogo.gif" border="0" width="137" height="45" alt="High Court of Karnataka"/>
+				</a>Computer Main Centre<br /></b></font>
+			</div>
+			<div style="width: 11%; display: block; float:left"><font color="white" align=center><b>Designed and Hosted By<br/>
+				<a href="http://www.kar.nic.in" target="_blank" style="text-decoration: none">
+					<img src="https://karnatakajudiciary.kar.nic.in/images/nic.gif" border="0" width="137" height="45" alt="NIC, Karnataka"/></a><br/>NIC, Karnataka</b></font>
+			</div>
+			<div style="width: 12%; display: block; float:left" align=center><font color="white"><b>India Portal<br /></b></font>
+				<a href="http://www.india.gov.in" target="_blank" style="text-decoration: none">
+				<img src="https://karnatakajudiciary.kar.nic.in/images/indiaPortal.gif" border="0" width="137" height="45" alt="India Portal"/></a>
+			</div>
+			<div style="width: 12%; display: block; float:left" align=center><font color="white"><b>Digital India<br/>
+				<a href="http://www.digitalindia.gov.in" target="_blank" style="text-decoration: none">
+				<img src="https://karnatakajudiciary.kar.nic.in/images/digitalindia.jpg" border="0" width="137" height="45" alt="Digital India"/></a>
+				<br/>Karnataka</b></font>
+			</div>			
+			<div style="width: 14%; display: block; float:right; text-align:center" class="footerText"><b>Todays Visitor Count:<br/><font size=3 color="white">33652</font><br/>
+			Visitor Count:<br/><font size=3 color="white">231522350<br/></font>[ Since 29/07/2009 ]</b></p>
+			</div>
+		</div>
+</div>

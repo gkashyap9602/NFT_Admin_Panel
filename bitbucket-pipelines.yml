@@ -1,0 +1,16 @@
+image: node:16
+
+options:
+ max-time: 10
+pipelines:
+  branches:
+    staging:
+    - step:
+         name: Run Shell Script
+         script:
+           - echo "Running Shell Script now"
+           - pipe: atlassian/ssh-run:0.4.0
+             variables:
+               SSH_USER: 'ubuntu'
+               SERVER: '44.229.99.130'
+               COMMAND: '/home/ubuntu/cicd-scripts/admin-staging.nftbuilder.pro.sh'

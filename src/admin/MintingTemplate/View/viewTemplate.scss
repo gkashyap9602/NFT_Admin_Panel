@@ -1,0 +1,86 @@
+.viewTemplate input[type='radio'] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.viewTemplate input[type='radio']+img {
+  cursor: pointer;
+}
+
+.template-screen:hover input[type='radio']:checked+img {
+  outline: 4px solid rgb(41, 116, 214);
+
+}
+
+.viewTemplate img {
+  height: 450px;
+  width: 100%;
+  padding: 4px;
+}
+
+.template-screen {
+  display: block;
+  width: 300px;
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid #b3b3b3;
+  border-radius: 1px;
+  margin: 0 auto;
+}
+.iconClass svg{ 
+  width: 17px;
+}
+
+.iconClass{
+  font-size: 15px;
+}
+
+.iconClass .svgIcons{ 
+  margin-left: 10px;
+}
+
+
+
+.template-screen img {
+  bottom: -1060px;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  z-index: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: top 11s;
+  -moz-transition: top 11s;
+  -ms-transition: top 11s;
+  -o-transition: top 11s;
+  transition: bottom 11s;
+}
+
+.template-screen:hover img {
+  bottom: 0;
+  -webkit-transition: all 11s;
+  -moz-transition: all 11s;
+  -ms-transition: all 11s;
+  -o-transition: all 11s;
+  transition: all 11s;
+
+}
+
+.div1 {
+  display: flex;
+  justify-content: flex-end;
+  // background-color: #37b9d7;
+}
+
+.div1 .btn{
+  // background-color: #37b9d7 !important;
+  color: aliceblue;
+
+}
+
+.template-screen-new {
+  background-color: #37b9d7;
+}

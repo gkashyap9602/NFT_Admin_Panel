@@ -1,0 +1,118 @@
+
+ .grid-system .paymentItem{
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    border: 1px solid #dfdfdf;
+    box-shadow: 0px 0px 10px #0808083b;
+    border-radius: 10px;
+    max-width: 240px;
+    min-height: 254px;
+    margin: auto;
+    
+  }
+ 
+
+    /* .grid-system .paymentItem img {
+      width: 100%;
+      background-color: transparent;
+      height: auto;
+    } */
+ 
+  
+ 
+    .grid-system .paymentItem .editNftImage {
+      width: 50%;
+      background-color: transparent;
+      height: auto;
+      /* margin-top: 44px; */
+    }
+  
+   
+   .grid-system .payment_text{
+    text-align: center;
+    font-size: 20px;
+    margin: -4px 0 0;
+  
+   }
+    .download{
+      opacity: 0;
+      right: 0;
+      position: absolute;
+      height: 2rem;
+      width: 2rem;
+      cursor: pointer;
+    }
+    .paymentItem:hover  .download {
+      opacity: 1;
+    }
+    .grid-system .paymentItem img:hover{
+      border: none !important;
+    }
+    .grid-system .paymentItem:hover{
+    /* border: 1px solid #646464; */
+    box-shadow: 0px 0px 10px #08080863;
+    }
+    .fullDiv{
+      /* background-color: rgb(232,232,232); */
+      padding: 0px 20px;
+    }
+    /* .nav{
+      color: black;
+      background-color: transparent;
+    } */
+     .nav:hover{
+      color: blue;
+      border-bottom: 1px solid blue;
+  
+      color: blue;
+      /* text-decoration: underline */
+    }
+    .dwnldBtn{
+      padding: 12px;
+      font-size: 16px;
+      width: 180px;
+      margin-right: 20px;
+    }
+    /* .item:hover img{
+      opacity: 0.5;
+    } */
+    .custom-nav {
+      /* border: 1px solid #000; */
+      overflow: hidden;
+    }
+    .custom-nav  .nav-link {
+      padding: 17px 17px !important;
+      font-size: 25px;
+  }
+  .custom-nav  .nav-link:hover,.custom-nav  .nav-link.active {
+      /* background-color: #fff; */
+      color: #000;
+  }
+  .col-xl-1.mt-2 {
+      width: 13% !important;
+  }
+  .grid-system .paymentItem img {
+      border-radius: 10px !important;
+  }
+  
+  /* .card-body{
+      border: 2px solid black !important;
+  } */
+  .cardImage{
+      margin-top: 20px;
+      overflow: auto;
+  }
+  
+  .card-body{
+    overflow: auto;
+  }
+
+  .svgIconsPayment svg{
+  /* font-size: 10px; */
+  width: 18px;
+  }
+  .svgIconsPayment{
+    bottom: 0px;
+  }
